@@ -5,7 +5,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Voter</b></h4>
+              <h4 class="modal-title"><b>Add Student Voter</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
@@ -76,7 +76,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Voter</b></h4>
+              <h4 class="modal-title"><b>Edit Student Voter</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="voters_edit.php">
@@ -148,7 +148,7 @@
                 <?php echo csrf_field(); ?>
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
-                    <p>DELETE VOTER</p>
+                    <p>DELETE STUDENT VOTER</p>
                     <h2 class="bold fullname"></h2>
                 </div>
             </div>
@@ -198,7 +198,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Import Voters</b></h4>
+              <h4 class="modal-title"><b>Import Student Voters</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="voters_import.php" enctype="multipart/form-data">

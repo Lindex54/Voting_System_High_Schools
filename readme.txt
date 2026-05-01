@@ -1,24 +1,35 @@
-1.XAMPP
+High School Voting System
 
-2."TEXT EDITOR" NOTEPAD++ OR SUBLIME TEXT 3 / ETC.
+This is a web-based voting system made for high school institutions. It helps school administrators manage student voters, leadership positions, candidate students, ballots, election status, voting, and results reporting.
 
-3"voting management system"
+Main features:
+- Student voter login
+- Admin dashboard
+- Student/voter management
+- Candidate student management
+- Leadership position management
+- Election open/close controls
+- Ballot preview and submission
+- Vote tally dashboard
+- Printable election results report
+- Class and stream turnout reporting
 
-4. Download the zip file/ download winrar
+Setup:
+1. Install XAMPP.
+2. Copy this project folder into your XAMPP htdocs directory.
+3. Open phpMyAdmin at http://localhost/phpmyadmin.
+4. Create a database named votesystem.
+5. Import the database file if starting from a fresh copy.
+6. Start Apache and MySQL from XAMPP.
+7. Open the system at http://localhost/votesystem.
 
-5. Extract the file and copy "voting management system" folder
+Default local database connection:
+- Host: localhost
+- User: root
+- Password: empty
+- Database: votesystem
 
-6.Paste inside root directory/ where you install xammp local disk C: drive D: drive E: paste: (for xampp/htdocs, 
+Admin area:
+http://localhost/votesystem/admin/
 
-7. Open PHPMyAdmin (http://localhost/phpmyadmin)
-
-8. Create a database with name votesystem
-
-6. Import votesystem.sql file(given inside the zip package in SQL file folder)
-
-7.Run the script http://localhost/voting management system
-
-username  Nurhodelta
-password  password
-
-Brought to you by: www.CampCodes.com
+The system is designed for local school election management and can be customized for different high school institutions.

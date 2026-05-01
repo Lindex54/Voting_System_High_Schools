@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Voters List
+        Students / Voters
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Voters</li>
+        <li class="active">Students / Voters</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -52,7 +52,7 @@
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Voters ID</th>
+                  <th>Voter ID</th>
                   <th>Student No.</th>
                   <th>Lastname</th>
                   <th>Firstname</th>

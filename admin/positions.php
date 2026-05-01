@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Positions
+        Leadership Positions
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Positions</li>
+        <li class="active">Leadership Positions</li>
       </ol>
     </section>
     <!-- Main content -->
@@ -52,7 +52,7 @@
               <table id="example1" class="table table-bordered">
                 <thead>
                   <th class="hidden"></th>
-                  <th>Description</th>
+                  <th>Leadership Position</th>
                   <th>Maximum Vote</th>
                   <th>Tools</th>
                 </thead>

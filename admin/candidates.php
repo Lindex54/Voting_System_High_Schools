@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Candidates List
+        Candidate Students
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Candidates</li>
+        <li class="active">Candidate Students</li>
       </ol>
     </section>
     <!-- Main content -->

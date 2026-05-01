@@ -24,7 +24,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Add New Candidate</b></h4>
+              <h4 class="modal-title"><b>Add Candidate Student</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_add.php" enctype="multipart/form-data">
@@ -92,7 +92,7 @@
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title"><b>Edit Candidate</b></h4>
+              <h4 class="modal-title"><b>Edit Candidate Student</b></h4>
             </div>
             <div class="modal-body">
               <form class="form-horizontal" method="POST" action="candidates_edit.php">
@@ -161,7 +161,7 @@
                 <?php echo csrf_field(); ?>
                 <input type="hidden" class="id" name="id">
                 <div class="text-center">
-                    <p>DELETE CANDIDATE</p>
+                    <p>DELETE CANDIDATE STUDENT</p>
                     <h2 class="bold fullname"></h2>
                 </div>
             </div>

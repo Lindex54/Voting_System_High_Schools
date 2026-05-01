@@ -84,7 +84,7 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
 
-              <p>No. of Positions</p>
+              <p>Leadership Positions</p>
             </div>
             <div class="icon">
               <i class="fa fa-tasks"></i>
@@ -104,7 +104,7 @@
                 echo "<h3>".$query->num_rows."</h3>";
               ?>
           
-              <p>No. of Candidates</p>
+              <p>Candidate Students</p>
             </div>
             <div class="icon">
               <i class="fa fa-black-tie"></i>
@@ -121,7 +121,7 @@
                 echo "<h3>".$totalVoters."</h3>";
               ?>
              
-              <p>Total Voters</p>
+              <p>Registered Students</p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
@@ -138,7 +138,7 @@
                 echo "<h3>".$votersVoted."</h3>";
               ?>
 
-              <p>Voters Voted</p>
+              <p>Students Voted</p>
             </div>
             <div class="icon">
               <i class="fa fa-edit"></i>
@@ -250,9 +250,9 @@
               <h3 class="box-title"><b>Quick Actions</b></h3>
             </div>
             <div class="box-body">
-              <a href="voters.php" class="btn btn-app"><i class="fa fa-users"></i> Voters</a>
+              <a href="voters.php" class="btn btn-app"><i class="fa fa-users"></i> Students</a>
               <a href="candidates.php" class="btn btn-app"><i class="fa fa-black-tie"></i> Candidates</a>
-              <a href="positions.php" class="btn btn-app"><i class="fa fa-tasks"></i> Positions</a>
+              <a href="positions.php" class="btn btn-app"><i class="fa fa-tasks"></i> Leadership</a>
               <a href="ballot.php" class="btn btn-app"><i class="fa fa-file-text"></i> Ballot</a>
               <a href="print.php" class="btn btn-app"><i class="fa fa-print"></i> Print</a>
             </div>
@@ -301,7 +301,7 @@
 
       <div class="row">
         <div class="col-xs-12">
-          <h3>Votes Tally
+          <h3>Rock High School Election Results
             <span class="pull-right">
               <a href="print.php" class="btn btn-success btn-sm btn-flat"><span class="glyphicon glyphicon-print"></span> Print</a>
             </span>

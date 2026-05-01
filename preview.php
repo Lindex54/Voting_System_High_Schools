@@ -29,8 +29,8 @@
 						if($cmrow){
 							$output['list'] .= "
 								<div class='row votelist'>
-			                      	<span class='col-sm-4'><span class='pull-right'><b>".e($row['description'])." :</b></span></span> 
-			                      	<span class='col-sm-8'>".e($cmrow['firstname'])." ".e($cmrow['lastname'])."</span>
+			                      	<span class='vote-position'>".e($row['description'])."</span>
+			                      	<span class='vote-choice'>".e($cmrow['firstname'])." ".e($cmrow['lastname'])."</span>
 			                    </div>
 							";
 						}
@@ -50,8 +50,8 @@
 				if($csrow){
 					$output['list'] .= "
 						<div class='row votelist'>
-	                      	<span class='col-sm-4'><span class='pull-right'><b>".e($row['description'])." :</b></span></span> 
-	                      	<span class='col-sm-8'>".e($csrow['firstname'])." ".e($csrow['lastname'])."</span>
+	                      	<span class='vote-position'>".e($row['description'])."</span>
+	                      	<span class='vote-choice'>".e($csrow['firstname'])." ".e($csrow['lastname'])."</span>
 	                    </div>
 					";
 				}
