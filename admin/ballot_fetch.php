@@ -17,15 +17,23 @@
 	$query = $conn->query($sql);
 	$num = 1;
 	while($row = $query->fetch_assoc()){
-		$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.slugify($row['description']).'" name="'.slugify($row['description'])."[]".'">' : '<input type="radio" class="flat-red '.slugify($row['description']).'" name="'.slugify($row['description']).'">';
+		$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red ballot-choice '.slugify($row['description']).'" name="'.slugify($row['description'])."[]".'">' : '<input type="radio" class="flat-red ballot-choice '.slugify($row['description']).'" name="'.slugify($row['description']).'">';
 
 		$sql = "SELECT * FROM candidates WHERE position_id='".$row['id']."'";
 		$cquery = $conn->query($sql);
 		while($crow = $cquery->fetch_assoc()){
 			$image = (!empty($crow['photo'])) ? '../images/'.$crow['photo'] : '../images/profile.jpg';
 			$candidate .= '
-				<li>
-					'.$input.'<button class="btn btn-primary btn-sm btn-flat clist"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+				<li class="candidate-card">
+					<label class="candidate-select">
+						'.$input.'
+						<span class="select-text">Select</span>
+					</label>
+					<img src="'.$image.'" height="100px" width="100px" class="candidate-photo">
+					<div class="candidate-info">
+						<span class="cname">'.$crow['firstname'].' '.$crow['lastname'].'</span>
+						<button type="button" class="btn btn-primary btn-sm btn-flat platform"><i class="fa fa-search"></i> Platform</button>
+					</div>
 				</li>
 			';
 		}

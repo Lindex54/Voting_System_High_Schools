@@ -34,26 +34,25 @@
 
 		while(($row = fgetcsv($handle)) !== false){
 			$rowNumber++;
-			if($rowNumber === 1 && isset($row[1]) && strtolower(trim($row[1])) === 'firstname'){
+			if($rowNumber === 1 && isset($row[0]) && strtolower(trim($row[0])) === 'firstname'){
 				continue;
 			}
 
-			$student_number = clean_input($row[0] ?? '');
-			$firstname = clean_input($row[1] ?? '');
-			$lastname = clean_input($row[2] ?? '');
-			$class = clean_input($row[3] ?? '');
-			$stream = clean_input($row[4] ?? '');
-			$plain_password = clean_input($row[5] ?? '');
+			$firstname = clean_input($row[0] ?? '');
+			$lastname = clean_input($row[1] ?? '');
+			$class = clean_input($row[2] ?? '');
+			$stream = clean_input($row[3] ?? '');
+			$plain_password = clean_input($row[4] ?? '');
 
 			if($firstname === '' || $lastname === ''){
 				$skipped++;
 				continue;
 			}
 
+			$student_number = generate_student_number($conn);
 			if($plain_password === ''){
-				$plain_password = $student_number !== '' ? $student_number : 'voter123';
+				$plain_password = $student_number;
 			}
-
 			$voter_id = generate_voter_id($conn);
 			$password = password_hash($plain_password, PASSWORD_DEFAULT);
 			$stmt->bind_param("sssssss", $voter_id, $student_number, $password, $firstname, $lastname, $class, $stream);

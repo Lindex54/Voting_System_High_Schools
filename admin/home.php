@@ -60,14 +60,14 @@
         <h4><?php echo e($settings['title']); ?></h4>
         <p>Status: <b><?php echo e($statusLabel[$settings['status']] ?? 'Closed'); ?></b>
         <?php if(!empty($settings['start_at'])){ echo ' | Starts: '.e(date('M d, Y h:i A', strtotime($settings['start_at']))); } ?>
-        <?php if(!empty($settings['end_at'])){ echo ' | Ends: '.e(date('M d, Y h:i A', strtotime($settings['end_at']))); } ?>
-        <span class="pull-right"><a href="#config" data-toggle="modal" class="btn btn-default btn-sm btn-flat"><i class="fa fa-cog"></i> Settings</a></span></p>
-        <form method="POST" action="election_status.php" class="form-inline">
+        <?php if(!empty($settings['end_at'])){ echo ' | Ends: '.e(date('M d, Y h:i A', strtotime($settings['end_at']))); } ?></p>
+        <form method="POST" action="election_status.php" class="form-inline election-actions">
           <?php echo csrf_field(); ?>
           <button type="submit" class="btn btn-success btn-sm btn-flat" name="set_status" value="1" onclick="this.form.status.value='open';"><i class="fa fa-play"></i> Open Election</button>
           <button type="submit" class="btn btn-warning btn-sm btn-flat" name="set_status" value="1" onclick="this.form.status.value='closed';"><i class="fa fa-lock"></i> Close Election</button>
           <button type="submit" class="btn btn-info btn-sm btn-flat" name="set_status" value="1" onclick="this.form.status.value='draft';"><i class="fa fa-pause"></i> Not Started</button>
           <a href="print.php" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-print"></i> Print Results</a>
+          <a href="#config" data-toggle="modal" class="btn btn-default btn-sm btn-flat election-settings-btn"><i class="fa fa-cog"></i> Settings</a>
           <input type="hidden" name="status" value="<?php echo e($settings['status']); ?>">
         </form>
       </div>

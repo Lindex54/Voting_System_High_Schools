@@ -130,4 +130,24 @@
 
 		return $prefix.str_pad($number, 3, '0', STR_PAD_LEFT);
 	}
+
+	function generate_student_number($conn){
+		$prefix = 'RHS-STU-';
+		$like = $prefix.'%';
+		$stmt = $conn->prepare("SELECT student_number FROM voters WHERE student_number LIKE ? ORDER BY student_number DESC LIMIT 1");
+		$stmt->bind_param("s", $like);
+		$stmt->execute();
+		$query = $stmt->get_result();
+		$number = 1;
+
+		if($query->num_rows > 0){
+			$row = $query->fetch_assoc();
+			$last = (int) substr($row['student_number'], -3);
+			$number = $last + 1;
+		}
+
+		$stmt->close();
+
+		return $prefix.str_pad($number, 3, '0', STR_PAD_LEFT);
+	}
 ?>

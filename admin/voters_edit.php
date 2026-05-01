@@ -10,7 +10,6 @@
 		$id = (int) $_POST['id'];
 		$firstname = clean_input($_POST['firstname']);
 		$lastname = clean_input($_POST['lastname']);
-		$student_number = clean_input($_POST['student_number'] ?? '');
 		$class = clean_input($_POST['class'] ?? '');
 		$stream = clean_input($_POST['stream'] ?? '');
 		$password = $_POST['password'] ?? '';
@@ -29,8 +28,8 @@
 			$password = password_hash($password, PASSWORD_DEFAULT);
 		}
 
-		$stmt = $conn->prepare("UPDATE voters SET student_number = ?, firstname = ?, lastname = ?, class = ?, stream = ?, password = ? WHERE id = ?");
-		$stmt->bind_param("ssssssi", $student_number, $firstname, $lastname, $class, $stream, $password, $id);
+		$stmt = $conn->prepare("UPDATE voters SET firstname = ?, lastname = ?, class = ?, stream = ?, password = ? WHERE id = ?");
+		$stmt->bind_param("sssssi", $firstname, $lastname, $class, $stream, $password, $id);
 		if($stmt->execute()){
 			$_SESSION['success'] = 'Voter updated successfully';
 		}

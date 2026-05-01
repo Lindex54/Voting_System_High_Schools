@@ -9,7 +9,7 @@
 
 		$firstname = clean_input($_POST['firstname']);
 		$lastname = clean_input($_POST['lastname']);
-		$student_number = clean_input($_POST['student_number'] ?? '');
+		$student_number = generate_student_number($conn);
 		$class = clean_input($_POST['class'] ?? '');
 		$stream = clean_input($_POST['stream'] ?? '');
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -28,7 +28,7 @@
 		$stmt = $conn->prepare("INSERT INTO voters (voters_id, student_number, password, firstname, lastname, class, stream, photo) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
 		$stmt->bind_param("ssssssss", $voter, $student_number, $password, $firstname, $lastname, $class, $stream, $filename);
 		if($stmt->execute()){
-			$_SESSION['success'] = 'Voter added successfully. Voter ID: '.$voter;
+			$_SESSION['success'] = 'Voter added successfully. Voter ID: '.$voter.'. Student No.: '.$student_number;
 		}
 		else{
 			$_SESSION['error'] = $stmt->error;

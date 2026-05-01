@@ -113,11 +113,19 @@
 													}
 												}
 											}
-											$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red '.e($slug).'" name="'.e($slug)."[]".'" value="'.e($crow['id']).'" '.$checked.'>' : '<input type="radio" class="flat-red '.e($slug).'" name="'.e($slug).'" value="'.e($crow['id']).'" '.$checked.'>';
+											$input = ($row['max_vote'] > 1) ? '<input type="checkbox" class="flat-red ballot-choice '.e($slug).'" name="'.e($slug)."[]".'" value="'.e($crow['id']).'" '.$checked.'>' : '<input type="radio" class="flat-red ballot-choice '.e($slug).'" name="'.e($slug).'" value="'.e($crow['id']).'" '.$checked.'>';
 											$image = (!empty($crow['photo'])) ? 'images/'.e($crow['photo']) : 'images/profile.jpg';
 											$candidate .= '
-												<li>
-													'.$input.'<button type="button" class="btn btn-primary btn-sm btn-flat clist platform" data-platform="'.e($crow['platform']).'" data-fullname="'.e($crow['firstname'].' '.$crow['lastname']).'"><i class="fa fa-search"></i> Platform</button><img src="'.$image.'" height="100px" width="100px" class="clist"><span class="cname clist">'.e($crow['firstname'].' '.$crow['lastname']).'</span>
+												<li class="candidate-card">
+													<label class="candidate-select">
+														'.$input.'
+														<span class="select-text">Select</span>
+													</label>
+													<img src="'.$image.'" height="100px" width="100px" class="candidate-photo">
+													<div class="candidate-info">
+														<span class="cname">'.e($crow['firstname'].' '.$crow['lastname']).'</span>
+														<button type="button" class="btn btn-primary btn-sm btn-flat platform" data-platform="'.e($crow['platform']).'" data-fullname="'.e($crow['firstname'].' '.$crow['lastname']).'"><i class="fa fa-search"></i> Platform</button>
+													</div>
 												</li>
 											';
 										}

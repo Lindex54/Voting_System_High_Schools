@@ -11,13 +11,6 @@
               <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
                 <?php echo csrf_field(); ?>
                 <div class="form-group">
-                    <label for="student_number" class="col-sm-3 control-label">Student No.</label>
-
-                    <div class="col-sm-9">
-                      <input type="text" class="form-control" id="student_number" name="student_number">
-                    </div>
-                </div>
-                <div class="form-group">
                     <label for="firstname" class="col-sm-3 control-label">Firstname</label>
 
                     <div class="col-sm-9">
@@ -86,7 +79,8 @@
                     <label for="edit_student_number" class="col-sm-3 control-label">Student No.</label>
 
                     <div class="col-sm-9">
-                      <input type="text" class="form-control" id="edit_student_number" name="student_number">
+                      <input type="text" class="form-control" id="edit_student_number" readonly>
+                      <p class="help-block">Generated automatically by the system.</p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -208,7 +202,7 @@
 
                     <div class="col-sm-9">
                       <input type="file" id="csv" name="csv" accept=".csv" required>
-                      <p class="help-block">Columns: student_number, firstname, lastname, class, stream, password</p>
+                      <p class="help-block">Columns: firstname, lastname, class, stream, password. Student numbers are generated automatically.</p>
                     </div>
                 </div>
             </div>
