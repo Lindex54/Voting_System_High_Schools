@@ -1,4 +1,4 @@
-ROCK HIGH SCHOOL VOTING SYSTEM
+HIGH SCHOOL VOTING SYSTEM
 ================================
 
 A simple, reliable, and modern web-based voting system built for school elections.
